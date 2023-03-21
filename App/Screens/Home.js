@@ -11,6 +11,7 @@ const [canGoForward, setcanGoForward] = useState(false);
 
 const handleBackPress=()=>{
 webViewRef.current.goBack()
+setIsModal(false)
 }
 const handleForwardPress=()=>{
   
@@ -70,6 +71,7 @@ setIsModal(true)
       />
 <TouchableOpacity style={{flex:1, marginTop:15}} onPress={()=>{
 seturl(newUrl)
+setIsModal(false)
 }}>
 <FontAwesome name='arrow-right' color={colors.tree[colors.tree.length-3]} size={25} />
 </TouchableOpacity>
@@ -89,7 +91,9 @@ setIsModal(false)
 <FontAwesome name='search' color={colors.tree[colors.tree.length-3]} size={25} />
 </TouchableOpacity>
 
-<TouchableOpacity>
+<TouchableOpacity onPress={()=>{
+    navigation.navigate('Start')
+}}>
 <FontAwesome name='home' color={colors.tree[colors.tree.length-3]} size={25} />
 </TouchableOpacity>
 

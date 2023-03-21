@@ -5,7 +5,7 @@ import colors from '../utils/colors.js';
 
 
 
-export default function Start() {
+export default function Start({navigation}) {
   const network={
     msg:'No Active Connection',
     color:'red',
@@ -25,6 +25,8 @@ export default function Start() {
  </View>
  <View style={styles.btn}>
 <TouchableOpacity style={styles.startBtn} onPress={()=>{
+
+  navigation.navigate('Home')
 
 }}>
 <Text style={{color:colors.tree[0], fontSize:20,}}>Get In</Text>
